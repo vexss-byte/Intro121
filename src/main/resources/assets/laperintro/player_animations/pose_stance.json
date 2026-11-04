@@ -1,0 +1,97 @@
+{
+ "name": "pose_stance",
+ "emote": {
+  "beginTick": 10,
+  "endTick": 40,
+  "stopTick": 50,
+  "isLoop": true,
+  "returnTick": 10,
+  "degrees": true,
+  "moves": [
+   {
+    "rightArm": {
+     "roll": 0,
+     "pitch": 0
+    },
+    "leftArm": {
+     "roll": 0,
+     "pitch": 0
+    },
+    "rightLeg": {
+     "roll": 0
+    },
+    "leftLeg": {
+     "roll": 0
+    },
+    "head": {
+     "pitch": 0
+    },
+    "tick": 0,
+    "easing": "InOutSine"
+   },
+   {
+    "tick": 10,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 35,
+     "pitch": -20
+    },
+    "leftArm": {
+     "roll": -35,
+     "pitch": -20
+    },
+    "rightLeg": {
+     "roll": 10
+    },
+    "leftLeg": {
+     "roll": -10
+    },
+    "head": {
+     "pitch": -3
+    }
+   },
+   {
+    "tick": 25,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 38,
+     "pitch": -24
+    },
+    "leftArm": {
+     "roll": -38,
+     "pitch": -24
+    },
+    "rightLeg": {
+     "roll": 11
+    },
+    "leftLeg": {
+     "roll": -11
+    },
+    "head": {
+     "pitch": -6
+    }
+   },
+   {
+    "tick": 40,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 35,
+     "pitch": -20
+    },
+    "leftArm": {
+     "roll": -35,
+     "pitch": -20
+    },
+    "rightLeg": {
+     "roll": 10
+    },
+    "leftLeg": {
+     "roll": -10
+    },
+    "head": {
+     "pitch": -3
+    }
+   }
+  ]
+ }
+}

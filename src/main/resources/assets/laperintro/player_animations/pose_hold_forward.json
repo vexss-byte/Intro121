@@ -1,0 +1,61 @@
+{
+ "name": "pose_hold_forward",
+ "emote": {
+  "beginTick": 10,
+  "endTick": 40,
+  "stopTick": 50,
+  "isLoop": true,
+  "returnTick": 10,
+  "degrees": true,
+  "moves": [
+   {
+    "rightArm": {
+     "pitch": 0,
+     "yaw": 0
+    },
+    "leftArm": {
+     "pitch": 0,
+     "yaw": 0
+    },
+    "tick": 0,
+    "easing": "InOutSine"
+   },
+   {
+    "tick": 10,
+    "easing": "InOutSine",
+    "rightArm": {
+     "pitch": -85,
+     "yaw": -15
+    },
+    "leftArm": {
+     "pitch": -85,
+     "yaw": 20
+    }
+   },
+   {
+    "tick": 25,
+    "easing": "InOutSine",
+    "rightArm": {
+     "pitch": -90,
+     "yaw": -18
+    },
+    "leftArm": {
+     "pitch": -90,
+     "yaw": 24
+    }
+   },
+   {
+    "tick": 40,
+    "easing": "InOutSine",
+    "rightArm": {
+     "pitch": -85,
+     "yaw": -15
+    },
+    "leftArm": {
+     "pitch": -85,
+     "yaw": 20
+    }
+   }
+  ]
+ }
+}

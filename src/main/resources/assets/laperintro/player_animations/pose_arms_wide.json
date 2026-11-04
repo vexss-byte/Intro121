@@ -1,0 +1,65 @@
+{
+ "name": "pose_arms_wide",
+ "emote": {
+  "beginTick": 10,
+  "endTick": 40,
+  "stopTick": 50,
+  "isLoop": true,
+  "returnTick": 10,
+  "degrees": true,
+  "moves": [
+   {
+    "rightArm": {
+     "roll": 0
+    },
+    "leftArm": {
+     "roll": 0
+    },
+    "head": {
+     "pitch": 0
+    },
+    "tick": 0,
+    "easing": "InOutSine"
+   },
+   {
+    "tick": 10,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 60
+    },
+    "leftArm": {
+     "roll": -60
+    },
+    "head": {
+     "pitch": -5
+    }
+   },
+   {
+    "tick": 25,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 72
+    },
+    "leftArm": {
+     "roll": -72
+    },
+    "head": {
+     "pitch": -8
+    }
+   },
+   {
+    "tick": 40,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 60
+    },
+    "leftArm": {
+     "roll": -60
+    },
+    "head": {
+     "pitch": -5
+    }
+   }
+  ]
+ }
+}

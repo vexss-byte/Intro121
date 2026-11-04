@@ -1,0 +1,77 @@
+{
+ "name": "pose_cheer",
+ "emote": {
+  "beginTick": 10,
+  "endTick": 40,
+  "stopTick": 50,
+  "isLoop": true,
+  "returnTick": 10,
+  "degrees": true,
+  "moves": [
+   {
+    "rightArm": {
+     "roll": 0
+    },
+    "leftArm": {
+     "roll": 0
+    },
+    "rightLeg": {
+     "roll": 0
+    },
+    "leftLeg": {
+     "roll": 0
+    },
+    "tick": 0,
+    "easing": "InOutSine"
+   },
+   {
+    "tick": 10,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 172
+    },
+    "leftArm": {
+     "roll": -125
+    },
+    "rightLeg": {
+     "roll": 6
+    },
+    "leftLeg": {
+     "roll": -6
+    }
+   },
+   {
+    "tick": 25,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 125
+    },
+    "leftArm": {
+     "roll": -172
+    },
+    "rightLeg": {
+     "roll": 6
+    },
+    "leftLeg": {
+     "roll": -6
+    }
+   },
+   {
+    "tick": 40,
+    "easing": "InOutSine",
+    "rightArm": {
+     "roll": 172
+    },
+    "leftArm": {
+     "roll": -125
+    },
+    "rightLeg": {
+     "roll": 6
+    },
+    "leftLeg": {
+     "roll": -6
+    }
+   }
+  ]
+ }
+}

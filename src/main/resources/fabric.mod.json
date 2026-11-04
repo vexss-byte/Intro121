@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "laperintro",
+	"version": "${version}",
+	"name": "Laper Intro",
+	"description": "Sinematik perkenalan member server: panggung, kamera, nameplate, partikel, dan pose animasi pada badan player asli (Player Animation Library).",
+	"authors": ["verlonn26"],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.laperintro.LaperIntro"],
+		"client": ["com.laperintro.client.LaperIntroClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"recommends": {
+		"player_animation_library": ">=1.2.8"
+	}
+}

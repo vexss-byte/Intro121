@@ -26,9 +26,10 @@ dependencies {
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// Player Animation Library 1.2.8+mc.26.3 (client-only API) beserta library molang bawaannya.
-	// File jar disimpan di folder libs/ supaya build tidak bergantung pada Maven pihak ketiga.
-	clientImplementation fileTree(dir: 'libs', include: '*.jar')
+	// Player Animation Library 1.2.8+mc.26.3 dan dependensi Molang lokal.
+	// PAL menyuntikkan IAnimatedAvatar ke Avatar; karena Avatar juga dipakai source server,
+	// library harus ada pada compile classpath main DAN client.
+	implementation fileTree(dir: 'libs', include: '*.jar')
 }
 
 processResources {

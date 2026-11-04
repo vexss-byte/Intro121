@@ -5,6 +5,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.item.DyeColor;
 
 /**
  * Membangun panggung seperti di video: lantai gelap melingkar, garis putih putus-putus, pad emas di tengah,
@@ -52,12 +53,12 @@ public final class StageBuilder {
 		// 3. cincin putus-putus putih (radius 10) dan garis lintasan ke arah kamera (+Z)
 		for (int deg = 0; deg < 360; deg += 14) {
 			double a = Math.toRadians(deg);
-			set(l, cx + (int) Math.round(Math.cos(a) * 10), top, cz + (int) Math.round(Math.sin(a) * 10), Blocks.WHITE_CONCRETE);
+			set(l, cx + (int) Math.round(Math.cos(a) * 10), top, cz + (int) Math.round(Math.sin(a) * 10), Blocks.CONCRETE.pick(DyeColor.WHITE));
 		}
 		for (int z = 4; z <= 13; z += 3) {
-			set(l, cx, top, cz + z, Blocks.WHITE_CONCRETE);
-			set(l, cx - 4, top, cz + z, Blocks.WHITE_CONCRETE);
-			set(l, cx + 4, top, cz + z, Blocks.WHITE_CONCRETE);
+			set(l, cx, top, cz + z, Blocks.CONCRETE.pick(DyeColor.WHITE));
+			set(l, cx - 4, top, cz + z, Blocks.CONCRETE.pick(DyeColor.WHITE));
+			set(l, cx + 4, top, cz + z, Blocks.CONCRETE.pick(DyeColor.WHITE));
 		}
 
 		// 4. pad emas 3x3
@@ -81,7 +82,7 @@ public final class StageBuilder {
 			set(l, x, top + 14, gz, Blocks.BLACKSTONE);
 		for (int x = cx - 6; x <= cx + 6; x++)
 			for (int y = top + 1; y <= top + 10; y++)
-				set(l, x, y, gz, Blocks.LIGHT_BLUE_STAINED_GLASS);
+				set(l, x, y, gz, Blocks.STAINED_GLASS.pick(DyeColor.LIGHT_BLUE));
 
 		// 6. tiang berlentera mengelilingi tepi
 		for (int deg = 0; deg < 360; deg += 30) {

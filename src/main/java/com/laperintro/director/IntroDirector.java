@@ -40,7 +40,7 @@ public final class IntroDirector {
 
 	private record Slot(UUID id, String name, String quote, String pose, boolean mystery) {}
 
-	private record Saved(ServerLevel level, double x, double y, double z, float yaw, float pitch, boolean invulnerable) {}
+	private record Saved(ServerLevel level, double x, double y, double z, float yaw, float pitch) {}
 
 	public static final String[] POSES = {
 		"pose_sword_up", "pose_arms_wide", "pose_point", "pose_wave",
@@ -138,8 +138,9 @@ public final class IntroDirector {
 		for (int i = 0; i < slots.size(); i++) {
 			ServerPlayer p = player(slots.get(i));
 			if (p == null) continue;
-			saved.put(p.getUUID(), new Saved((ServerLevel) p.level(), p.getX(), p.getY(), p.getZ(), p.getYRot(), p.getXRot(), p.isPermanentlyInvulnerable()));
-			p.setPermanentlyInvulnerable(true); // server hardcore: jangan ada yang mati selama sinematik
+			saved.put(p.getUUID(), new Saved((ServerLevel) p.level(), p.getX(), p.getY(), p.getZ(), p.getYRot(), p.getXRot()));
+			// server hardcore: Resistance V = kebal hampir semua damage selama sinematik
+			p.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20 * 60 * 30, 4, false, false));
 			double[] h = StageBuilder.holdSlot(stage, i);
 			tp(p, level, h[0], h[1], h[2], 0f);
 		}
@@ -197,7 +198,6 @@ public final class IntroDirector {
 		if (e == null) return false;
 		e.setInvisible(true);
 		e.setNoGravity(true);
-		e.setPermanentlyInvulnerable(true);
 		e.snapTo(pad.add(0, 12, 22));
 		if (!level.addFreshEntity(e)) return false;
 		rig = e;
@@ -351,8 +351,8 @@ public final class IntroDirector {
 			if (p == null) continue;
 			p.removeEffect(MobEffects.INVISIBILITY);
 			p.removeEffect(MobEffects.GLOWING);
+			p.removeEffect(MobEffects.RESISTANCE);
 			if (sv != null) {
-				p.setPermanentlyInvulnerable(sv.invulnerable());
 				tp(p, sv.level(), sv.x(), sv.y(), sv.z(), sv.yaw());
 			}
 		}
